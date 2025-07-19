@@ -29,7 +29,7 @@ async function jwtAuthenticate(req, res, next) {
     next();
   }
   catch( err ) {
-    res.status(httpStatus.status.INTERNAL_SERVER_ERROR).send(err)
+    next(err);
   }
 }
 
