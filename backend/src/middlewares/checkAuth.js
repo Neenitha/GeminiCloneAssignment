@@ -1,3 +1,5 @@
+/** Aunthentication Middlewares Configurations **/
+
 const db = require('../config/database');
 const tokenUtil = require('../utils/token.util');
 const httpStatus = require('http-status');
