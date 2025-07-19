@@ -1,3 +1,5 @@
+/** Chatroom API Controllers **/
+
 const db = require('../config/database');
 const httpStatus = require('http-status');
 const config = require('../config/config');
