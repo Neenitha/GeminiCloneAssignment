@@ -42,7 +42,7 @@ const authSENDOTP = async (req, res, next) => {
 }
 
 // Verify OTP entered
-const authVERIFYOTP = async ( req, res) => {
+const authVERIFYOTP = async ( req, res, next) => {
   try {
     const userResult = await db.query('SELECT * FROM USERS where mobile_number = $1', [req.body.mobile_number]);
     const user = userResult.rows[0];
@@ -66,7 +66,7 @@ const authVERIFYOTP = async ( req, res) => {
 }
 
 // Send OTP to proceed with change password
-const authFORGOTPASSWORD = async ( req, res) => {
+const authFORGOTPASSWORD = async ( req, res, next) => {
   try {
     const userResult = await db.query('SELECT * FROM USERS where mobile_number = $1', [req.body.mobile_number]);
 
