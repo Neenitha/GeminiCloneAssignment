@@ -25,11 +25,11 @@ const signerOptions = {
 }
 
 const signer = new rds.Signer(signerOptions);
-// const getPassword = () => signer.get;
+// const getPassword = () => signer.get; //To DO: get auth token
 
 const pool = new Pool({
   user: signerOptions.username,
-  password: 'postgres_123',
+  password: config.AWS_DB_PASSWORD,
   host: signerOptions.hostname,
   port: signerOptions.port,
   database: config.AWS_DB_NAME,
