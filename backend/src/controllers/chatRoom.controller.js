@@ -5,7 +5,6 @@ const httpStatus = require('http-status');
 const config = require('../config/config');
 const genAI = require('@google/genai');
 
-const SUBSCRIPTION_TIER_PRO = 'Pro';
 const SUBSCRIPTION_TIER_BASIC = 'Basic';
 
 // Create a chat room
@@ -67,7 +66,7 @@ const chatRoomSENDMESSAGE = async (req, res, next) => {
     const geminiResponse = await ai.models.generateContent({
       model: config.GEMINI_MODEL,
       contents: req.body.message
-    })
+    });
 
     // Check the daily message count and send the ai response back only if the 
     // count is within the limits
