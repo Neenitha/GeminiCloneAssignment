@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@google/genai": "^1.10.0",
+    "aws-sdk": "^2.1692.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "http-status": "^2.1.0",
