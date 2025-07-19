@@ -1,5 +1,5 @@
-# GeminiCloneAssignment
-Gemini Clone Assignment Backend Source Code
+# GeminiClone
+Gemini Clone Backend Source Code
 
 Directory structure
 
