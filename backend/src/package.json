@@ -1,0 +1,22 @@
+{
+  "name": "gemini-clone-backend",
+  "version": "1.0.0",
+  "description": "Backend APIs for gemini clone",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "author": "Neenitha Gopalan",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.10.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "http-status": "^2.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "pg": "^8.16.3",
+    "stripe": "^18.3.0"
+  }
+}
