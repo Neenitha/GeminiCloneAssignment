@@ -1,3 +1,5 @@
+/** Environment Configurations **/
+
 const dotenv = require('dotenv');
 dotenv.config();
 
