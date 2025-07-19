@@ -1,3 +1,5 @@
+/** User Routes **/
+
 const express = require('express');
 const authMiddleware = require('../middlewares/checkAuth');
 const router = express.Router();
