@@ -1,3 +1,5 @@
+/** Authentication API Controllers **/
+
 const db = require('../config/database');
 const httpStatus = require('http-status');
 const otpUtil = require('../utils/otp.util');
