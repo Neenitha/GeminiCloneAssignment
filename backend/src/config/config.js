@@ -19,7 +19,8 @@ const envVarsSchema = joi.object().keys({
   AWS_DB_PORT: joi.string().required(),
   AWS_DB_USERNAME: joi.string().required(),
   AWS_DB_NAME: joi.string().required(),
-  AWS_DB_PASSWORD: joi.string().required()
+  AWS_DB_PASSWORD: joi.string().required(),
+  STRIPE_API_KEY: joi.string().required()
 }).unknown();
 
 const {value: envVars, error } = envVarsSchema.prefs({errors: {label: 'key'}}).validate(process.env);
@@ -41,7 +42,8 @@ const config = {
   AWS_DB_PORT: envVars.AWS_DB_PORT,
   AWS_DB_USERNAME: envVars.AWS_DB_USERNAME,
   AWS_DB_NAME: envVars.AWS_DB_NAME,
-  AWS_DB_PASSWORD: envVars.AWS_DB_PASSWORD
+  AWS_DB_PASSWORD: envVars.AWS_DB_PASSWORD,
+  STRIPE_API_KEY: envVars.STRIPE_API_KEY
 }
 
 module.exports = config;
