@@ -1,1 +1,0 @@
-install: cd src && npm install
