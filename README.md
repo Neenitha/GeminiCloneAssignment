@@ -14,5 +14,7 @@ Directory structure
 
 ### Local Deployment
 Copy .env file to src folder
-cd src
+cd backend/src
+npm install
 npm start
+
