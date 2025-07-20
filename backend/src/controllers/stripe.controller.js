@@ -1,8 +1,9 @@
 /** Stripe API Controllers **/
 
+const { config } = require('dotenv');
 const db = require('../config/database');
 const httpStatus = require('http-status');
-const stripe = require('stripe')('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');
+// const stripe = require('stripe')();
 
 const SUBSCRIPTION_TIER_PRO = 'Pro';
 
