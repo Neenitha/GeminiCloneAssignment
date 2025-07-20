@@ -4,6 +4,7 @@ const db = require('../config/database');
 const httpStatus = require('http-status');
 const config = require('../config/config');
 const genAI = require('@google/genai');
+const checkCache = require('../middlewares/checkCache');
 
 const SUBSCRIPTION_TIER_BASIC = 'Basic';
 
@@ -26,8 +27,12 @@ const chatRoomUSERGET = async (req, res, next) => {
   try {
     const chatRoomsResult = await db.query('SELECT f.username AS creator_name, f.chatroom_name AS chatroom_name, r.username AS receiver_name FROM (SELECT u.userName AS username, c.chatroom_name, c.receiver_id  FROM chatroom c JOIN users u ON u.user_id = c.user_id WHERE u.user_id = $1) AS f LEFT JOIN users r ON f.receiver_id = r.user_id', [parseInt(res.locals.userId)]);
 
-    if (chatRoomsResult.rowCount)
+    if (chatRoomsResult.rowCount) {
+      const key = res.locals.userId;
+      checkCache.cache.set(key, chatRoomsResult.rows);
+
       res.status(httpStatus.status.OK).send(chatRoomsResult.rows);
+    }
     else
       res.status(httpStatus.status.NOT_FOUND).send(`No chat rooms found for the user!`);
   }
